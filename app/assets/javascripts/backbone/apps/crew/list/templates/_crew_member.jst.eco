@@ -1,0 +1,49 @@
+<div class="large-3 columns text-center">
+  <a class="th radius" href="#">
+    <img src="assets/<%= @avatar %>" />
+  </a>
+</div>
+<div class="large-9 columns stats-container">
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="row">
+        <div class="large-5 columns attribute-label">Age</div>
+        <div class="large-7 columns"><%= @age %></div>
+      </div>
+      <div class="row">
+        <div class="large-5 columns attribute-label">Name</div>
+        <div class="large-7 columns"><%= @name %></div>
+      </div>
+      <div class="row">
+        <div class="large-5 columns attribute-label">Title</div>
+        <div class="large-7 columns"><%= @title %></div>
+      </div>
+      <div class="row">
+        <div class="large-5 columns attribute-label">Species</div>
+        <div class="large-7 columns"><%= @species %></div>
+      </div>
+      <div class="row">
+        <div class="large-5 columns attribute-label">Origin</div>
+        <div class="large-7 columns"><%= @origin %></div>
+      </div>
+    </div>
+    <div class="large-6 columns">
+      <blockquote>
+        <ul class="large-block-grid-2 text-center stats">
+          <li>
+            <div>
+              <span class="label round">5</span>
+            </div>
+            <div class="stat-type">Completed</div>
+          </li>
+          <li>
+            <div>
+              <span class="label round success">$5,000</span>
+            </div>
+            <div class="stat-type">Earnings</div>
+          </li>
+        </ul>
+      </blockquote>
+    </div>
+  </div>
+</div>
