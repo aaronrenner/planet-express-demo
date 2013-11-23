@@ -1,4 +1,6 @@
 PlanetExpress::Application.routes.draw do
+  resources :crew
+
   get "static" => "application#static"
   root "application#index"
 

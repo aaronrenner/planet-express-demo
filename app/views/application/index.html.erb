@@ -7,8 +7,6 @@
 
 <%= javascript_tag do %>
 	$(function() {
-		PlanetExpress.start({
-			environment: "<%= Rails.env %>"
-		});
+    PlanetExpress.start();
 	});
 <% end %>
