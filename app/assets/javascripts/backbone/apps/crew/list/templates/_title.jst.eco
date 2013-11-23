@@ -1,0 +1,30 @@
+<div id="page-title">
+  <div class="row">
+    <div class="large-12 columns">
+      <h1>Crew</h1>
+      <h4>The Crew Members of Planet Express</h4>
+      <div id="page-icons">
+        <i class="accessibility foundicon-person"></i>
+        <i class="accessibility foundicon-person"></i>
+        <i class="accessibility foundicon-person"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumbs">
+  <div class="row">
+    <div class="columns large-12">
+      <ul class="right">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li class="unavailable">
+          <a href="#">Crew</a>
+        </li>
+        <li class="current">
+          <a href="#">Fry</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
