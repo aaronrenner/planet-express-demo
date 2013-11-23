@@ -5,6 +5,10 @@
 
     regions:
       titleRegion: "#title-region"
+      panelRegion: "#panel-region"
 
   class List.Title extends App.Views.ItemView
     template: "crew/list/_title"
+
+  class List.Panel extends App.Views.ItemView
+    template: "crew/list/_panel"

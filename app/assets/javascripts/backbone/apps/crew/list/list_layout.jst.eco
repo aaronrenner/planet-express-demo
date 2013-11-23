@@ -2,25 +2,7 @@
   <div id="title-region"></div>
   <section>
     <div class="row">
-      <div class="large-12 columns">
-        <div class="left">
-          <button id="new-crew" class="button radius small secondary">
-            <i class="general-enclosed foundicon-plus"></i>
-            Add
-          </button>
-        </div>
-        <div class="right">
-          <dl class="sub-nav">
-            <dt>Sort:</dt>
-            <dd class="active">
-              <a href="#">Name</a>
-            </dd>
-            <dd>
-              <a href="#">Title</a>
-            </dd>
-          </dl>
-        </div>
-      </div>
+      <div id = "panel-region" class="large-12 columns"></div>
       <div class="large-12 columns">
         <form data-type="new">
           <div class="panel radius">

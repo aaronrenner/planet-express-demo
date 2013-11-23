@@ -7,6 +7,7 @@
 
       @layout.on "show", =>
         @titleRegion()
+        @panelRegion()
 
 
       App.mainRegion.show @layout
@@ -15,8 +16,15 @@
       titleView = @getTitleView()
       @layout.titleRegion.show titleView
 
+    panelRegion: ->
+      panelView = @getPanelView()
+      @layout.panelRegion.show panelView
+
     getLayoutView: ->
       new List.Layout
 
     getTitleView: ->
       new List.Title
+
+    getPanelView: ->
+      new List.Panel
