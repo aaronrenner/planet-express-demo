@@ -15,9 +15,6 @@
   class List.Panel extends App.Views.ItemView
     template: "crew/list/_panel"
 
-  class List.New extends App.Views.ItemView
-    template: "crew/list/_new"
-
   class List.CrewMember extends App.Views.ItemView
     template: "crew/list/_crew_member"
     tagName: "li"
