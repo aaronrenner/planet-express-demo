@@ -1,0 +1,17 @@
+html, body								{  height: 100%;  }                                                                                  
+ul, ol, dl								{  list-style-type: none;  }                                                                         
+#wrap											{  height: auto !important; min-height: 100%; margin-bottom: -$pushHeight;  }                        
+#push											{  height: $pushHeight;  }                                                                           
+#page-title								{  background-color: $primary-color; padding: 10px 0; position: relative;                            
+	h1, h2, h3, h4					{  color: $white; font-family: 'Open Sans', sans-serif; font-weight: 500; @include single-text-shadow(darken($primary-color, 5%), 1px, 2px, 0);  }                         
+	h1											{  margin: 0;  }                                                                                     
+	h4											{  font-weight: 300;  }                                                                              
+	#page-icons							{  font-size: 500%; color: darken($primary-color, 5%); position: absolute; top: 15px; right: 50px;   
+		i											{  width: 26px; display: inline-block; @include single-text-shadow(lighten($primary-color, 5%), 0, 1px, 0);  }                                                            
+	}                                                                                                                            
+}                                                                                                                              
+                                                                                                                          
+#main-region							{                                                                                                    
+	section									{  margin: 20px 0;  }                                                                                
+}
+[data-wrapper].opacity		{  @include opacity(0.4);  }

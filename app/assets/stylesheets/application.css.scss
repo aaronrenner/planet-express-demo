@@ -8,6 +8,20 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
  */
+@import "compass/css3";
+
+@import "foundation";
+
+@import 'foundation-icons';
+
+@import "utils/_vars";
+
+@import "comps/_base";
+@import "comps/_forms";
+@import "comps/_breadcrumbs";
+@import "comps/_images";
+
+@import "apps/header";
+@import "apps/footer";
+@import "apps/crew";
