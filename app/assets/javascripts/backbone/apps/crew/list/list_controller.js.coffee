@@ -5,15 +5,16 @@
     list:  ->
       crew = App.request "crew:entities"
 
-      @layout = @getLayoutView()
+      App.execute "when:fetched", crew, =>
+        @layout = @getLayoutView()
 
-      @layout.on "show", =>
-        @titleRegion()
-        @panelRegion()
-        @crewRegion crew
+        @layout.on "show", =>
+          @titleRegion()
+          @panelRegion()
+          @crewRegion crew
 
 
-      App.mainRegion.show @layout
+        App.mainRegion.show @layout
 
     titleRegion: ->
       titleView = @getTitleView()

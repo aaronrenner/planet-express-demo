@@ -6,7 +6,6 @@ class CrewController < ApplicationController
   end
 
   def show
-    sleep 3
     respond_with Crew.find(params[:id])
   end
 end
