@@ -38,6 +38,10 @@
 
     crewRegion: (crew)->
       crewView = @getCrewView crew
+
+      crewView.on "childview:crew:member:clicked", (child, member) ->
+        App.vent.trigger "crew:member:clicked", member
+
       @layout.crewRegion.show crewView
 
 

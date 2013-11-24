@@ -1,6 +1,7 @@
 @PlanetExpress.module "Entities", (Entities, App, Backbone, Marionette, $, _ ) ->
 
   class Entities.Crew extends App.Entities.Model
+    urlRoot: -> Routes.crew_index_path()
 
   class Entities.CrewCollection extends App.Entities.Collection
     model: Entities.Crew
@@ -15,5 +16,14 @@
         reset: true
       crew
 
+    getCrewMember: (id) ->
+      member = new Entities.Crew
+        id: id
+      member.fetch()
+      member
+
   App.reqres.setHandler "crew:entities", ->
     API.getCrew()
+
+  App.reqres.setHandler "crew:entity", (id) ->
+    API.getCrewMember id

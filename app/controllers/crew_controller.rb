@@ -4,4 +4,8 @@ class CrewController < ApplicationController
   def index
     respond_with Crew.all
   end
+
+  def show
+    respond_with Crew.find(params[:id])
+  end
 end

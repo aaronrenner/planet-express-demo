@@ -1,0 +1,118 @@
+<div id="edit-crew">
+	<div id="page-title">
+		<div class="row">
+			<div class="large-12 columns">
+				<h1><%= @name %></h1>
+				<h4>Some awesome quote here</h4>
+				<div id="page-icons">
+					<i class="accessibility foundicon-person"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="breadcrumbs">
+		<div class="row">
+			<div class="columns large-12">
+				<ul class="right">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">Crew</a>
+					</li>
+					<li>
+						<a href="#">Fry</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<section>
+		<div class="row">
+			<div class="large-12 columns">
+				<h3>Edit</h3>
+				<form data-type="edit">
+					<div class="panel radius">
+						<div id="edit-crew">
+							<fieldset>
+								<legend>Details</legend>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Age</label>
+							        </div>
+							        <div class="large-9 columns left">
+										<input type="text" name="age" class="large-1" value="<%= @age %>" />
+							        </div>
+								</div>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Name</label>
+							        </div>
+							        <div class="large-9 columns left">
+										<input type="text" name="name" class="large-4" value="<%= @name %>"  />
+							        </div>
+								</div>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Avatar</label>
+							        </div>
+							        <div class="large-9 columns left">
+										<input type="text" name="avatar" class="large-4" value="<%= @avatar %>"  />
+							        </div>
+								</div>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Title</label>
+							        </div>
+							        <div class="large-9 columns left">
+										<input type="text" name="title" class="large-4" value="<%= @title %>"  />
+							        </div>
+								</div>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Species</label>
+							        </div>
+							        <div class="large-4 columns">
+										<input type="text" name="species" value="<%= @species %>"  />
+							        </div>
+									<div class="large-5 columns left">
+										<h6 class="subheader hint">Ex: Human, Robot, Mutant</h6>
+									</div>
+								</div>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Origin</label>
+							        </div>
+							        <div class="large-9 columns left">
+										<input type="text" name="origin" class="large-4" value="<%= @origin %>"  />
+							        </div>
+								</div>
+							</fieldset>
+							<fieldset>
+								<legend>Quote</legend>
+								<div class="row">
+									<div class="large-3 columns">
+										<label class="right inline">Favorite Quote</label>
+							        </div>
+							        <div class="large-9 columns left">
+										<textarea name="quote" class="large-6"><%= @quote %></textarea>
+							        </div>
+								</div>
+							</fieldset>
+						</div>
+						<footer>
+							<ul class="inline-list right">
+								<li>
+									<button data-form-button="cancel" class="button small secondary radius">Cancel</button>
+								</li>
+								<li>
+									<button data-form-button="primary" class="button small radius">Save</button>
+								</li>
+							</ul>
+						</footer>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</div>
