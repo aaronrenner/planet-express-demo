@@ -15,9 +15,11 @@
     formRegion: (crew) ->
       editView = @getEditView crew
 
-      form = App.request "form:wrapper", editView
+      formView = App.request "form:wrapper", editView,
+        footer: true
 
-      @layout.formRegion.show form
+
+      @layout.formRegion.show formView
 
 
     getLayoutView: (crew) ->

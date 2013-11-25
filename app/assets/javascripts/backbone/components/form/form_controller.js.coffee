@@ -17,7 +17,8 @@
       @formLayout.formContentRegion.show @contentView
 
     getFormLayout: (options = {}) ->
-      config = @getDefaultConfig _.result(@contentView, "form")
+      config = @getDefaultConfig _.result(@contentView, "form") #get options from @contentView.form
+      _.extend config, options # override settings with what was passed in to the object on this method
 
       buttons = @getButtons config.buttons
 
