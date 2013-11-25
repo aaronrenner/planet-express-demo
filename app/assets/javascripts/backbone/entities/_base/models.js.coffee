@@ -7,15 +7,19 @@
 
       _.defaults options,
         wait: true
-        success: _.bind(@saveSuccess, @, isNew)
+        success: _.bind(@saveSuccess, @, isNew, options.collection)
 
 
       super data, options
 
-    saveSuccess: (isNew) =>
+    saveSuccess: (isNew, collection) =>
       console.info "success", @, isNew
       if isNew ## model is being created
+        collection.add @ if collection
+        collection.trigger "model:created", @ if collection
         @trigger "created", @
       else ## model is being updated
+        collection ?= @collection ## if model has colelction property defined, use that if no collection
+        collection.trigger "model:updated", @ if collection
         @trigger "updated", @
 
