@@ -19,6 +19,8 @@
 
     modelEvents:
       "change:_errors": "changeErrors"
+      "sync:start"    : "syncStart"
+      "sync:complete"     : "syncStop"
 
     initialize: ->
       @setInstancePropertiesFor "config", "buttons"
@@ -57,3 +59,8 @@
       sm = $("<small>").text(error)
       el.after(sm).closest(".row").addClass("error")
 
+    syncStart: (model) ->
+      @addOpacityWrapper() if @config.syncing
+
+    syncStop: (model) ->
+      @addOpacityWrapper(false) if @config.syncing

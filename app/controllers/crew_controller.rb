@@ -10,10 +10,12 @@ class CrewController < ApplicationController
   end
 
   def update
+    sleep 2
     respond_with(Crew.update params[:id], crew_params)
   end
 
   def create
+    sleep 2
     respond_with(Crew.create crew_params)
   end
 

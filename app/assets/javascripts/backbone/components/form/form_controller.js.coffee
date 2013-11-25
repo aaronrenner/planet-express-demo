@@ -49,6 +49,7 @@
         footer: true
         focusFirstInput: true
         errors: true
+        syncing: true
 
     getButtons: (buttons={}) ->
       App.request("form:button:entities", buttons, @contentView.model) unless buttons is false
