@@ -15,6 +15,7 @@
 
     triggers:
       "submit": "form:submit"
+      "click [data-form-button='cancel']": "form:cancel"
 
     modelEvents:
       "change:_errors": "changeErrors"
@@ -42,7 +43,10 @@
 
     changeErrors: (model, errors, options) ->
       if @config.errors
-        @addErrors errors
+        if _.isEmpty(errors) then @removeErrors() else @addErrors errors
+
+    removeErrors: ->
+      @$('.error').removeClass('error').find("small").remove()
 
     addErrors: (errors = {}) ->
       for name, array of errors

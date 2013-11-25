@@ -6,6 +6,9 @@
 
       crew.on "all", (e) -> console.log(e)
 
+      crew.on "updated", ->
+        App.vent.trigger "crew:updated", crew
+
       App.execute "when:fetched", crew, =>
         @layout = @getLayoutView crew
 
@@ -22,6 +25,9 @@
 
     formRegion: (crew) ->
       editView = @getEditView crew
+
+      editView.on "form:cancel", ->
+        App.vent.trigger "crew:cancelled", crew
 
       formView = App.request "form:wrapper", editView,
         footer: true
