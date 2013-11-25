@@ -1,23 +1,10 @@
-<form data-type="new">
-  <div class="panel radius">
-    <div id="new-crew">
-      <div class="row">
-        <div class="large-12 columns">
-          <label>What's their name?</label>
-          <input type="text" placeholder="Crew Member Name" class="large-6 columns" />
-        </div>
+<div id="new-crew">
+  <div class="row">
+    <div class="large-12 columns">
+      <label>What's their name?</label>
+      <div class="large-6">
+        <input type="text" name="name" placeholder="Crew Member Name" />
       </div>
     </div>
-    <footer>
-      <ul class="inline-list">
-        <li>
-          <button data-form-button="primary" class="button small radius">Save</button>
-        </li>
-        <li>
-          <button data-form-button="cancel" class="button small secondary radius">Cancel</button>
-        </li>
-      </ul>
-    </footer>
   </div>
-</form>
-
+</div>

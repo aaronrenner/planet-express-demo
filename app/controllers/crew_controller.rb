@@ -13,6 +13,10 @@ class CrewController < ApplicationController
     respond_with(Crew.update params[:id], crew_params)
   end
 
+  def create
+    respond_with(Crew.create crew_params)
+  end
+
   private
 
   def crew_params

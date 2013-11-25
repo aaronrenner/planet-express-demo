@@ -18,7 +18,7 @@
   App.reqres.setHandler "new:crew:member:view", ->
     API.newCrew()
 
-  App.vent.on "crew:member:clicked", (member) ->
+  App.vent.on "crew:member:clicked crew:created", (member) ->
     App.navigate Routes.edit_crew_path(member.id)
     API.edit member.id, member
 
