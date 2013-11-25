@@ -14,6 +14,7 @@
 //= require underscore
 //= require backbone
 //= require backbone.marionette
+//= require backbone.syphon
 //= require js-routes
 //= require_tree ./backbone/config
 //= require backbone/app

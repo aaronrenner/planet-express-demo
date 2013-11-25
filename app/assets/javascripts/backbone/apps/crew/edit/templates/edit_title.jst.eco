@@ -1,0 +1,28 @@
+<div id="page-title">
+  <div class="row">
+    <div class="large-12 columns">
+      <h1><%= @name %></h1>
+      <h4>Some awesome quote here</h4>
+      <div id="page-icons">
+        <i class="accessibility foundicon-person"></i>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="breadcrumbs">
+  <div class="row">
+    <div class="columns large-12">
+      <ul class="right">
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Crew</a>
+        </li>
+        <li>
+          <a href="#">Fry</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

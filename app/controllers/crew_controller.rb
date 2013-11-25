@@ -8,4 +8,14 @@ class CrewController < ApplicationController
   def show
     respond_with Crew.find(params[:id])
   end
+
+  def update
+    respond_with(Crew.update params[:id], crew_params)
+  end
+
+  private
+
+  def crew_params
+    params.permit(:age, :name, :avatar, :title, :species, :origin, :quote)
+  end
 end

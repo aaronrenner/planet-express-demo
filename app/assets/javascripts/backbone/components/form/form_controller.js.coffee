@@ -9,6 +9,17 @@
 
       @listenTo @formLayout, "show", @formContentRegion
       @listenTo @formLayout, "close", @close
+      @listenTo @formLayout, "form:submit", @formSubmit
+
+    formSubmit: ->
+      data = Backbone.Syphon.serialize @formLayout
+
+      if @contentView.triggerMethod("form:submit", data) isnt false
+        model = @contentView.model
+        @processFormSubmit data, model
+
+    processFormSubmit: (data, model) ->
+      model.save data
 
     onClose: ->
       console.log "onClose", @
