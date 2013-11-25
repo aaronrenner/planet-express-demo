@@ -12,7 +12,7 @@
       array = []
 
       array.push {type: "cancel", className: "button small secondary radius",  text: buttons.cancel} unless buttons.cancel is false
-      array.push {type: "priamry", className: "button small radius",  text: buttons.primary} unless buttons.primary is false
+      array.push {type: "primary", className: "button small radius",  text: buttons.primary} unless buttons.primary is false
 
       array.reverse() if buttons.placement is "left"
 
