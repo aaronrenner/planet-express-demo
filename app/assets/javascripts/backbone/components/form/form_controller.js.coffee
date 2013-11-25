@@ -18,21 +18,21 @@
 
     getFormLayout: (options = {}) ->
       config = @getDefaultConfig _.result(@contentView, "form")
+
+      buttons = @getButtons config.buttons
+
       new Form.FormWrapper
         config: config
         model: @contentView.model
+        buttons: buttons
 
     getDefaultConfig: (config={}) ->
       _.defaults config,
         footer: true
         focusFirstInput: true
-        buttons: @getDefaultButtons config.buttons
 
-    getDefaultButtons: (buttons = {}) ->
-      _.defaults buttons,
-        primary: "Save"
-        cancel: "Cancel"
-        placement: "right"
+    getButtons: (buttons={}) ->
+      App.request("form:button:entities", buttons, @contentView.model) unless buttons is false
 
 
   App.reqres.setHandler "form:wrapper", (contentView, options={})->

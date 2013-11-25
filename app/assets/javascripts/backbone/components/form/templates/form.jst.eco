@@ -3,14 +3,15 @@
   <div id="form-content-region"></div>
   <% if @footer: %>
     <footer>
-      <ul class="inline-list <%= @buttons.placement %>">
-        <li>
-          <button data-form-button="cancel" class="button small secondary radius"><%= @buttons.cancel %></button>
-        </li>
-        <li>
-          <button data-form-button="primary" class="button small radius"><%= @buttons.primary %></button>
-        </li>
-      </ul>
+      <% if @buttons: %>
+        <ul class="inline-list">
+          <% for button in @buttons: %>
+            <li>
+              <button data-form-button="<%= button.type %>" class="<%= button.className %>"><%= button.text %></button>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </footer>
   <% end %>
 </div>

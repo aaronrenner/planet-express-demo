@@ -10,7 +10,5 @@
     template: "crew/edit/edit_crew"
 
     form:
-      buttons:
-        primary: "foo"
-        cancel: "bar cancel"
-        placement: "left"
+      buttons: false
+        # placement: "left"

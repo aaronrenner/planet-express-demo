@@ -10,16 +10,23 @@
     regions:
       formContentRegion: "#form-content-region"
 
+    ui:
+      buttonContainer: "ul.inline-list"
+
     serializeData: ->
       footer: @options.config.footer
-      buttons: @options.config.buttons
+      buttons: @options.buttons?.toJSON() ? false
       
     onShow: ->
       _.defer =>
         @focusFirstInput() if @options.config.focusFirstInput
+        @buttonPlacement() if @options.buttons
 
     focusFirstInput: ->
       @$(':input:visible:enabled:first').focus()
+
+    buttonPlacement: ->
+      @ui.buttonContainer.addClass @options.buttons.placement
 
     getFormDataType: ->
       if @model.isNew() then "new" else "edit"
