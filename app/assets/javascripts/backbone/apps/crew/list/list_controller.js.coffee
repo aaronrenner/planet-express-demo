@@ -1,14 +1,16 @@
 @PlanetExpress.module "CrewApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  List.Controller =
+  class List.Controller extends Marionette.Controller
     
-    list:  ->
+    initialize:  ->
       crew = App.request "crew:entities"
 
       App.execute "when:fetched", crew, =>
         @layout = @getLayoutView()
 
-        @layout.on "show", =>
+        @listenTo @layout, "close", @close
+
+        @listenTo @layout, "show", =>
           @titleRegion()
           @panelRegion()
           @crewRegion crew
@@ -23,7 +25,7 @@
     panelRegion: ->
       panelView = @getPanelView()
 
-      panelView.on "new:crew:button:clicked", =>
+      @listenTo panelView, "new:crew:button:clicked", =>
         @newRegion()
 
       @layout.panelRegion.show panelView
@@ -32,7 +34,7 @@
       region = @layout.newRegion
       newView = App.request "new:crew:member:view"
 
-      newView.on "form:cancel", =>
+      @listenTo newView, "form:cancel", =>
         region.close()
 
       region.show newView
@@ -40,10 +42,10 @@
     crewRegion: (crew)->
       crewView = @getCrewView crew
 
-      crewView.on "childview:crew:member:clicked", (child, args) ->
+      @listenTo crewView, "childview:crew:member:clicked", (child, args) ->
         App.vent.trigger "crew:member:clicked", args.model
 
-      crewView.on "childview:crew:delete:clicked", (child, args) ->
+      @listenTo crewView, "childview:crew:delete:clicked", (child, args) ->
         model = args.model
         if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
 

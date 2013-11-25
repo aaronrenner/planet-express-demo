@@ -7,7 +7,7 @@
 
   API =
     list: ->
-      CrewApp.List.Controller.list()
+      new CrewApp.List.Controller
 
     newCrew: ->
       CrewApp.New.Controller.newCrew()
