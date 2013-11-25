@@ -19,4 +19,5 @@
 //= require backbone/app
 //= require_tree ./backbone/views
 //= require_tree ./backbone/entities
+//= require_tree ./backbone/components
 //= require_tree ./backbone/apps

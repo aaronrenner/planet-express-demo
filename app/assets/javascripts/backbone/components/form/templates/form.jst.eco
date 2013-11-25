@@ -1,0 +1,13 @@
+<div class="panel radius">
+  <div id="form-content-region"></div>
+  <footer>
+    <ul class="inline-list right">
+      <li>
+        <button data-form-button="cancel" class="button small secondary radius">Cancel</button>
+      </li>
+      <li>
+        <button data-form-button="primary" class="button small radius">Save</button>
+      </li>
+    </ul>
+  </footer>
+</div>
