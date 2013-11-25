@@ -19,6 +19,11 @@ class CrewController < ApplicationController
     respond_with(Crew.create crew_params)
   end
 
+  def destroy
+    sleep 2
+    respond_with(Crew.destroy params[:id])
+  end
+
   private
 
   def crew_params

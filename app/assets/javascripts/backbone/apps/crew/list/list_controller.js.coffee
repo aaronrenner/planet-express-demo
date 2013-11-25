@@ -43,6 +43,10 @@
       crewView.on "childview:crew:member:clicked", (child, member) ->
         App.vent.trigger "crew:member:clicked", member
 
+      crewView.on "childview:crew:delete:clicked", (child, args) ->
+        model = args.model
+        if confirm "Are you sure you want to delete #{model.get("name")}?" then model.destroy() else false
+
       @layout.crewRegion.show crewView
 
 
