@@ -1,6 +1,6 @@
 @PlanetExpress.module "CrewApp.List", (List, App, Backbone, Marionette, $, _) ->
 
-  class List.Controller extends Marionette.Controller
+  class List.Controller extends App.Controllers.Base
     
     initialize:  ->
       crew = App.request "crew:entities"
@@ -15,8 +15,10 @@
           @panelRegion()
           @crewRegion crew
 
+        @show @layout
 
-        App.mainRegion.show @layout
+    onClose: ->
+      console.info "closing controller!"
 
     titleRegion: ->
       titleView = @getTitleView()
@@ -31,13 +33,7 @@
       @layout.panelRegion.show panelView
 
     newRegion: ->
-      region = @layout.newRegion
-      newView = App.request "new:crew:member:view"
-
-      @listenTo newView, "form:cancel", =>
-        region.close()
-
-      region.show newView
+      App.execute "new:crew:member", @layout.newRegion
 
     crewRegion: (crew)->
       crewView = @getCrewView crew
