@@ -14,7 +14,9 @@
         region: region
 
     edit: (id, member) ->
-      CrewApp.Edit.Controller.edit id, member
+      new CrewApp.Edit.Controller
+        id: id
+        crew: member
 
   App.commands.setHandler "new:crew:member", (region)->
     API.newCrew region
