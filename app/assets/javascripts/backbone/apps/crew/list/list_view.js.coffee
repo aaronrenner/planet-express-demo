@@ -28,6 +28,7 @@
     
     triggers:
       "click .crew-delete button" : "crew:delete:clicked"
+      "click"                     : "crew:member:clicked"
 
   class List.Empty extends App.Views.ItemView
     template: "crew/list/_empty"

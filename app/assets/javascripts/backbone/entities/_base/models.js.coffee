@@ -9,6 +9,9 @@
       @set _destroy: true
       super options
 
+    isDestroyed: ->
+      @get "_destroy"
+
     save: (data, options = {}) ->
       isNew = @isNew()
 

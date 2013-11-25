@@ -1,5 +1,6 @@
 @PlanetExpress.module "Views", (Views, App, Backbone, Marionette, $, _) ->
 	
+  #Store off default remove implementation so it can be called in overriden method
 	_remove = Marionette.View::remove
 	
 	_.extend Marionette.View::,
@@ -13,8 +14,10 @@
 			for key, val of _.pick(@options, args...)
 				@[key] = val
 	
+    #Overrides default view remove method
 		remove: (args...) ->
 			console.log "removing", @
+      # if the view has a model and is destroyed
 			if @model?.isDestroyed?()
 				
 				wrapper = @$el.toggleWrapper
