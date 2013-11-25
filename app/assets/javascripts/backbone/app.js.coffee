@@ -15,6 +15,12 @@
   App.reqres.setHandler "default:region", ->
     App.mainRegion
 
+  App.commands.setHandler "register:instance", (instance, id) ->
+    App.register instance, id
+
+  App.commands.setHandler "unregister:instance", (instance, id) ->
+    App.unregister instance, id
+
   App.on "initialize:after", ->
     @startHistory()
     @navigate(@rootRoute, trigger: true) unless @getCurrentRoute()
